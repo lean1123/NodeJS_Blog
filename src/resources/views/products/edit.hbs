@@ -1,0 +1,22 @@
+<div class="mt-4">
+    <h2>UPDATE A PRODUCT</h2>
+    <form method="post" action="/products/{{doc._id}}?_method=PUT">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" value="{{doc.name}}" id="name" name="name">
+        </div>
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="text" class="form-control" value="{{doc.price}}" id="price" name="price">
+        </div>
+        <div class="form-group">
+            <label for="image">Image</label>
+            <input type="text" class="form-control" value="{{doc.image}}" id="image" name="image">
+        </div>
+        <div class="form-group">
+            <label for="imgsDetails">Images Details</label>
+            <textarea class="form-control" name="imgsDetails" id="imgsDetails">{{doc.imgsDetails}}</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>

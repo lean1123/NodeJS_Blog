@@ -1,0 +1,19 @@
+<div class="mt-4">
+    <div class="row">
+        <div class="col-lg-3">
+            <h2>{{product.name}}</h2>
+            <p>{{product.price}} VND</p>
+        </div>
+        <div class="col-lg-9">
+            <div class="row">
+                {{#each product.imgsDetails}}
+                    <div class="col-lg-4">
+                        <div class="card" style="width: 18rem;">
+                            <img class="card-img-top" src="{{this}}" alt="Card image cap">
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>
