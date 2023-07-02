@@ -18,7 +18,7 @@
       </div>
 
       <div class="form-group">
-        <button class="btn btn-primary disabled" id="process-btn">Process</button>
+        <button class="btn btn-primary" id="process-btn" disabled>Process</button>
       </div>
     </div>
 
@@ -91,7 +91,7 @@
     document.addEventListener('DOMContentLoaded', function() {
         var courseId;
         var deleteForm = document.forms['delete-course-form'];
-        var containerForm = document.forms['container-form'];
+        var containerForm = $('form[name="container-form"]');
         var btnDeleteCourse = document.getElementById('btn-delete-course');
         var checkBoxAll = $('#select-all');
         var selectItems = $('input[name="chooseItems[]"]');
@@ -125,21 +125,23 @@
         });
 
         //Process Button handle
+        /*
         containerForm.on('submit', function(e){
-          var isSunmitable = !($(this).hasClass('disabled'));
+          var isSunmitable = !(processBtn.hasClass('disabled'));
 
           if(!isSunmitable){
             e.preventDefault();
           }
         });
+        */
 
         //Handle submit button
         function renderCheckAllSubmitBtn(){
           var checkCount = $('input[name="chooseItems[]"]:checked').length;
           if(checkCount > 0){
-            processBtn.removeClass('disabled');
+            processBtn.attr('disabled', false);
           }
-          else processBtn.addClass('disabled');
+          else processBtn.attr('disabled', true);
         }
     });
 </script>
